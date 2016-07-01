@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Stringhandler Javascript</title>
+   <link rel="stylesheet" href="style.css">
+ <meta name="author" content="Mediacollege Amsterdam">
+ <script>
+   string2="//lege string voorkomt errror in startscript"; //lege string voorkomt errror in startscript
+   function leesInput()
+       {
+           string1 = document.getElementById("string1").value;
+           string2 = document.getElementById("string2").value
+           document.getElementById("inString1").innerHTML = string1;
+           document.getElementById("inString2").innerHTML = string2;
+           document.getElementById("trimString1").innerHTML = string1.trim();
+           document.getElementById("trimString2").innerHTML = string2.trim();
+
+           var string3 = string1.trim()+" "+string2.trim();
+           document.getElementById("Strings").innerHTML = string3;
+           var length = string3.length;
+           document.getElementById("Length").innerHTML = length;
+           var str = string1;
+           var upCase = firstToUpperCase(str) +" "+ string2;
+           document.getElementById("UpperCase").innerHTML = upCase;
+           document.getElementById("Space").innerHTML = string3.indexOf(" ");
+           document.getElementById("Apenstaartje").innerHTML = string3.indexOf("@");
+           var html = string3.replace("html", "PHP");
+           document.getElementById("Replace").innerHTML = html;
+           var caps = string3.toUpperCase();
+           document.getElementById("AllCaps").innerHTML = caps;
+       }
+     function firstToUpperCase( str ) {
+         //http://stackoverflow.com/questions/5886936/how-do-i-make-the-first-letter-of-a-string-uppercase
+         return str.substr(0, 1).toUpperCase() + str.substr(1);
+       }
+ </script>
+ </head>
+ <body>
+   <header>
+       <h4>Stringhandler Javascript , opdracht maak dit script <img src = "http://www.ma-web.nl/static/vector/Logo_blok.svg"  width = "30" alt = "logo Ma"></h4>
+       <h3>Robin de Groot GD1A</h3>
+
+ </header>
+
+ <div>
+   <fieldset style = "width: 650px">
+         <legend>input text</legend>
+         <input type="text" id = "string1" maxlength = "30" size = "30" placeholder = "string 1">
+         <input type="text" id = "string2" maxlength = "30" size = "30" placeholder = "string 2"><br>
+         <input type="button" value="input" onclick = "leesInput()">
+   </fieldset>
+   <fieldset style = "width: 650px">
+         <legend>output</legend>
+         <ul>
+           <li>Ingevoerde string 1: <span id = "inString1"></span></li>
+           <li>Ingevoerde string 2: <span id = "inString2"></span></li>
+           <li>String 1 getrimd trim(): <span id = "trimString1"></span></li>
+           <li>String 2 getrimd trim(): <span id = "trimString2"></span></li>
+           <li>String 3 is de concatenation van string 1 en string 2: <span id = "Strings"></span></li>
+           <li>De lengte van string 3 is: <span id = "Length"></span></li>
+           <li>Zoeken naar spaties. Er zit een spatie op positie:  <span id = "Space"></span></li>
+           <li>Zoeken naar @. Er zit een @ op positie: <span id = "Apenstaartje"></span></li>
+           <li>Zoek naar woord "html" vervang dit door "PHP":  <span id = "Replace"></span></li>
+           <li>Alles in hoofdletters:  <span id = "AllCaps"></span></li>
+           <li>Wijzig de eerste letter van string 3 naar hoofdletter: <span id = "UpperCase"></span></li>
+         </ul>
+   </fieldset>
+   <h4>vervolg opdracht maak code waarmee jij controleert of een input een geldig e-mail adres is</h4>
+ </div>
+
+
+
+ </body>
+</html>
